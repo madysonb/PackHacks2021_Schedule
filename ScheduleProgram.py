@@ -154,8 +154,12 @@ class ScheduleProgram(QWidget):
         enoughTime = True
         hwCount = 0
 
+        for i in range(len(hwTimes)):
+            hwTimes[i] = float(hwTimes[i])
+
         longestBreakIndx = np.where(np.asarray(breakLengths) == max(breakLengths))[0][0]
         longestHWIndx = np.where(np.asarray(hwTimes) == max(hwTimes))[0][0]
+            
 
 
         while hwCount < len(hwTitles) and enoughTime:
